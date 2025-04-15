@@ -1,0 +1,245 @@
+{
+	"info": {
+		"_postman_id": "57abc833-b3aa-48ab-8d3a-2526723fdcd2",
+		"name": "Exam",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "44000503"
+	},
+	"item": [
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"userName\": \"demoTest2414221\",\r\n  \"firstName\": \"demo\",\r\n  \"lastName\": \"Tester\",\r\n  \"email\": \"demo14642424325224@test.com\",\r\n  \"password\": \"123456\",\r\n  \"rePassword\": \"123456\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{endpoint}}/User/Register/",
+					"host": [
+						"{{endpoint}}"
+					],
+					"path": [
+						"User",
+						"Register",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Access Token",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"user@example.com\",\r\n  \"password\": \"string\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{endpoint}}/User/Authentication",
+					"host": [
+						"{{endpoint}}"
+					],
+					"path": [
+						"User",
+						"Authentication"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create movie",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJKd3RTZXJ2aWNlQWNjZXNzVG9rZW4iLCJqdGkiOiJlZWQ0NDlhYi0wYWQ3LTQxZjctYTVkYy05OWQ4M2ZkMTFmNTQiLCJpYXQiOiIwNC8xNS8yMDI1IDE5OjE5OjMzIiwiVXNlcklkIjoiYmQzM2QxNWUtMWI5ZC00MzcyLTNiOTUtMDhkYzVjNDg1YzY5IiwiRW1haWwiOiJ1c2VyQGV4YW1wbGUuY29tIiwiVXNlck5hbWUiOiJzdHJpbmciLCJleHAiOjE3NDQ3NjYzNzMsImlzcyI6Ik1vdmllQ2F0YWxvZ19BcHBfU29mdFVuaSIsImF1ZCI6Ik1vdmllQ2F0YWxvZ19XZWJBUElfU29mdFVuaSJ9.LIxqgZYNciObdM272CaxocnWJyNTmx5JGsevwXSbhOA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"title\": \"Movie\",\r\n  \"description\": \"Good movie\",\r\n  \"posterUrl\": \"\",\r\n  \"trailerLink\": \"\",\r\n  \"isWatched\": true\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{endpoint}}/Movie/Create",
+					"host": [
+						"{{endpoint}}"
+					],
+					"path": [
+						"Movie",
+						"Create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Edit movie",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJKd3RTZXJ2aWNlQWNjZXNzVG9rZW4iLCJqdGkiOiJlZWQ0NDlhYi0wYWQ3LTQxZjctYTVkYy05OWQ4M2ZkMTFmNTQiLCJpYXQiOiIwNC8xNS8yMDI1IDE5OjE5OjMzIiwiVXNlcklkIjoiYmQzM2QxNWUtMWI5ZC00MzcyLTNiOTUtMDhkYzVjNDg1YzY5IiwiRW1haWwiOiJ1c2VyQGV4YW1wbGUuY29tIiwiVXNlck5hbWUiOiJzdHJpbmciLCJleHAiOjE3NDQ3NjYzNzMsImlzcyI6Ik1vdmllQ2F0YWxvZ19BcHBfU29mdFVuaSIsImF1ZCI6Ik1vdmllQ2F0YWxvZ19XZWJBUElfU29mdFVuaSJ9.LIxqgZYNciObdM272CaxocnWJyNTmx5JGsevwXSbhOA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"title\": \"Movie\",\r\n  \"description\": \"Good movie edited\",\r\n  \"posterUrl\": \"\",\r\n  \"trailerLink\": \"\",\r\n  \"isWatched\": true\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{endpoint}}/Movie/Edit?movieId=c7098039-8a65-45f7-b908-08dd71dd43c0",
+					"host": [
+						"{{endpoint}}"
+					],
+					"path": [
+						"Movie",
+						"Edit"
+					],
+					"query": [
+						{
+							"key": "movieId",
+							"value": "c7098039-8a65-45f7-b908-08dd71dd43c0"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete movie",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJKd3RTZXJ2aWNlQWNjZXNzVG9rZW4iLCJqdGkiOiJlZWQ0NDlhYi0wYWQ3LTQxZjctYTVkYy05OWQ4M2ZkMTFmNTQiLCJpYXQiOiIwNC8xNS8yMDI1IDE5OjE5OjMzIiwiVXNlcklkIjoiYmQzM2QxNWUtMWI5ZC00MzcyLTNiOTUtMDhkYzVjNDg1YzY5IiwiRW1haWwiOiJ1c2VyQGV4YW1wbGUuY29tIiwiVXNlck5hbWUiOiJzdHJpbmciLCJleHAiOjE3NDQ3NjYzNzMsImlzcyI6Ik1vdmllQ2F0YWxvZ19BcHBfU29mdFVuaSIsImF1ZCI6Ik1vdmllQ2F0YWxvZ19XZWJBUElfU29mdFVuaSJ9.LIxqgZYNciObdM272CaxocnWJyNTmx5JGsevwXSbhOA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{endpoint}}/Movie/Delete?movieId=40b4033f-4b73-40c7-b902-08dd71dd43c0",
+					"host": [
+						"{{endpoint}}"
+					],
+					"path": [
+						"Movie",
+						"Delete"
+					],
+					"query": [
+						{
+							"key": "movieId",
+							"value": "40b4033f-4b73-40c7-b902-08dd71dd43c0"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJKd3RTZXJ2aWNlQWNjZXNzVG9rZW4iLCJqdGkiOiJlZWQ0NDlhYi0wYWQ3LTQxZjctYTVkYy05OWQ4M2ZkMTFmNTQiLCJpYXQiOiIwNC8xNS8yMDI1IDE5OjE5OjMzIiwiVXNlcklkIjoiYmQzM2QxNWUtMWI5ZC00MzcyLTNiOTUtMDhkYzVjNDg1YzY5IiwiRW1haWwiOiJ1c2VyQGV4YW1wbGUuY29tIiwiVXNlck5hbWUiOiJzdHJpbmciLCJleHAiOjE3NDQ3NjYzNzMsImlzcyI6Ik1vdmllQ2F0YWxvZ19BcHBfU29mdFVuaSIsImF1ZCI6Ik1vdmllQ2F0YWxvZ19XZWJBUElfU29mdFVuaSJ9.LIxqgZYNciObdM272CaxocnWJyNTmx5JGsevwXSbhOA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{endpoint}}/Catalog/All",
+					"host": [
+						"{{endpoint}}"
+					],
+					"path": [
+						"Catalog",
+						"All"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "endpoint",
+			"value": "https://d24hkho2ozf732.cloudfront.net",
+			"type": "string"
+		}
+	]
+}
